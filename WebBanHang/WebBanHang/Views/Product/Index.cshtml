@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebBanHang.Models.Product>
+
+<h2>Danh sách Sản phẩm</h2>
+
+<div class="row mb-3 mt-4">
+    <div class="col-md-8">
+        <form asp-action="Index" method="get" class="d-flex align-items-center">
+            <input type="text" name="searchString" class="form-control mr-2" placeholder="Nhập tên sản phẩm..." style="max-width: 300px;" />
+
+            <select name="sortOrder" class="form-control mr-2" style="max-width: 200px;">
+                <option value="">-- Sắp xếp mặc định --</option>
+                <option value="price_asc">Giá: Thấp đến Cao</option>
+                <option value="price_desc">Giá: Cao xuống Thấp</option>
+            </select>
+
+            <button type="submit" class="btn btn-success">Lọc</button>
+        </form>
+    </div>
+    <div class="col-md-4 text-right">
+        <a asp-action="Add" class="btn btn-primary">+ Thêm sản phẩm mới</a>
+    </div>
+</div>
+<table class="table table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Hình ảnh</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Mô tả</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@product.ImageUrl" alt="@product.Name" style="width: 100px; height: 100px; border-radius: 8px; object-fit: cover;" />
+                </td>
+                <td style="vertical-align: middle; font-weight: bold;">@product.Name</td>
+
+                <td style="vertical-align: middle; color: red; font-weight: bold;">
+                    @product.Price.ToString("#,##0") $
+                </td>
+
+                <td style="vertical-align: middle;">@product.Description</td>
+                <td style="vertical-align: middle;">
+                    <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@product.Id" class="btn btn-sm btn-success">🛒 Mua ngay</a>
+                    <a asp-action="Display" class="btn btn-sm btn-info" asp-route-id="@product.Id">Xem</a>
+                    <a asp-action="Update" class="btn btn-sm btn-warning" asp-route-id="@product.Id">Sửa</a>
+                    <a asp-action="Delete" class="btn btn-sm btn-danger" asp-route-id="@product.Id">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    function addToCart(productName) {
+        alert("🎉 Chúc mừng! Bạn đã thêm thành công [" + productName + "] vào giỏ hàng.");
+    }
+</script>
