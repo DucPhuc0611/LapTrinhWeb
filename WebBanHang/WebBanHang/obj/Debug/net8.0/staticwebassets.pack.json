@@ -13,6 +13,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "M:\\LapTrinhWeb\\WebBanHang\\WebBanHang\\wwwroot\\images\\bpstore-vga-zotac-gaming-geforce-rtx-5080-amp-extreme-infinity__1__684af17953214b6491c9d007bd4a386e.jpg",
+      "PackagePath": "staticwebassets\\images\\bpstore-vga-zotac-gaming-geforce-rtx-5080-amp-extreme-infinity__1__684af17953214b6491c9d007bd4a386e.jpg"
+    },
+    {
+      "Id": "M:\\LapTrinhWeb\\WebBanHang\\WebBanHang\\wwwroot\\images\\galaxy-s24-ultra-highlights-color-titanium-yellow-back-mo.jpg",
+      "PackagePath": "staticwebassets\\images\\galaxy-s24-ultra-highlights-color-titanium-yellow-back-mo.jpg"
+    },
+    {
+      "Id": "M:\\LapTrinhWeb\\WebBanHang\\WebBanHang\\wwwroot\\images\\images.jpg",
+      "PackagePath": "staticwebassets\\images\\images.jpg"
+    },
+    {
+      "Id": "M:\\LapTrinhWeb\\WebBanHang\\WebBanHang\\wwwroot\\images\\loa-bose-soundlink-color-ii-bluetooth-viet-music.webp",
+      "PackagePath": "staticwebassets\\images\\loa-bose-soundlink-color-ii-bluetooth-viet-music.webp"
+    },
+    {
+      "Id": "M:\\LapTrinhWeb\\WebBanHang\\WebBanHang\\wwwroot\\images\\tai-nghe-bluetooth-true-wireless-gaming-asus-rog-cetra-trang-1-750x500.jpg",
+      "PackagePath": "staticwebassets\\images\\tai-nghe-bluetooth-true-wireless-gaming-asus-rog-cetra-trang-1-750x500.jpg"
+    },
+    {
+      "Id": "M:\\LapTrinhWeb\\WebBanHang\\WebBanHang\\wwwroot\\images\\tai_nghe_bluetooth_true_wireless_gaming_asus_rog_cetra_den_2_03b5cbe198.jgp",
+      "PackagePath": "staticwebassets\\images\\tai_nghe_bluetooth_true_wireless_gaming_asus_rog_cetra_den_2_03b5cbe198.jgp"
+    },
+    {
       "Id": "M:\\LapTrinhWeb\\WebBanHang\\WebBanHang\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

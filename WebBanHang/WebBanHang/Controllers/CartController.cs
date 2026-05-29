@@ -24,9 +24,9 @@ namespace WebBanHang.Controllers
         }
 
         // Thêm sản phẩm vào giỏ
-        public IActionResult AddToCart(int id)
+        public async Task<IActionResult> AddToCart(int id)
         {
-            var product = _productRepository.GetById(id);
+            var product = await _productRepository.GetByIdAsync(id);
             if (product == null) return NotFound();
 
             var cart = HttpContext.Session.Get<List<CartItem>>("Cart") ?? new List<CartItem>();
