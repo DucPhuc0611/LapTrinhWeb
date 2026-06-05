@@ -50,18 +50,41 @@
                 <a href="#" class="text-center"><i class="fa-solid fa-phone fs-5"></i><br>Gọi mua hàng</a>
                 <a href="/Cart" class="text-center"><i class="fa-solid fa-bag-shopping fs-5"></i><br>Giỏ hàng</a>
 
-                @{
-                    var username = Context.Session.GetString("Username");
-                }
-
-                @if (!string.IsNullOrEmpty(username))
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
                 {
-                    <a href="#" class="text-center text-success"><i class="fa-regular fa-circle-user fs-5"></i><br>Chào @username</a>
-                    <a href="/User/Logout" class="text-center"><i class="fa-solid fa-right-from-bracket fs-5"></i><br>Đăng xuất</a>
+                    <a href="#" class="text-center text-success">
+                        <i class="fa-regular fa-circle-user fs-5"></i><br>
+                        Chào @User.Identity.Name
+                    </a>
+
+                    <form asp-area="Identity"
+                          asp-page="/Account/Logout"
+                          asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })"
+                          method="post"
+                          class="text-center m-0 p-0">
+                        <button type="submit"
+                                class="btn btn-link text-white text-decoration-none p-0 fw-semibold"
+                                style="font-size: 14px;">
+                            <i class="fa-solid fa-right-from-bracket fs-5"></i><br>
+                            Đăng xuất
+                        </button>
+                    </form>
                 }
                 else
                 {
-                    <a href="/User/Login" class="text-center"><i class="fa-regular fa-circle-user fs-5"></i><br>Đăng nhập</a>
+                    <a asp-area="Identity"
+                       asp-page="/Account/Login"
+                       class="text-center">
+                        <i class="fa-regular fa-circle-user fs-5"></i><br>
+                        Đăng nhập
+                    </a>
+
+                    <a asp-area="Identity"
+                       asp-page="/Account/Register"
+                       class="text-center">
+                        <i class="fa-solid fa-user-plus fs-5"></i><br>
+                        Đăng ký
+                    </a>
                 }
 
                 <a href="/Product" class="text-center text-warning"><i class="fa-solid fa-gear fs-5"></i><br>Quản trị</a>
